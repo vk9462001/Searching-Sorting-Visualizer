@@ -1,0 +1,79 @@
+.mySlides {
+  display: none;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color:rgb(230, 230, 230);
+}
+
+.head {
+  margin-top: 20px;
+  margin-right: 25vw;
+  margin-left: 25vw;
+  text-align: center;
+  font-size: 30px;
+  background-color: rgb(20,183,255);
+  color: white;
+  font-weight: bolder;
+}
+
+.data-container1,.data-container2,.data-container3,.data-container4 {
+  width: 600px;
+  height: 364px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.bar1,.bar2,.bar3,.bar4 {
+  width: 28px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgb(20, 183, 255);
+  transition: 0.2s all ease;
+}
+
+.bar__id1,.bar__id2,.bar__id3,.bar__id4 {
+  position: absolute;
+  top: -24px;
+  width: 100%;
+  text-align: center;
+}
+.btn1
+{
+padding: 12px;
+font-weight: bolder;
+background-color: rgb(20, 183, 255);
+border-radius: 10px;
+color: white;
+font-size: 16px;
+border: white;
+margin-top: 1vw;
+margin-right: 1vw;
+}
+.btn2
+{
+padding: 12px;
+font-weight: bolder;
+background-color: rgb(20, 183, 255);
+border-radius: 10px;
+color: white;
+font-size: 16px;
+border: white
+}
+#ele1,#ele2,#ele3,#ele4{
+  text-align: center;
+  height: 35px;
+}
+.feature {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 25vw;
+  margin-left: 25vw;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgb(20,183,255);
+  color: white;
+  font-weight: bolder;
+}

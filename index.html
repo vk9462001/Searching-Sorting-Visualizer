@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizer</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <h5 style="color: #fff">Searching/Sorting Visualizer</h5>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" onclick="showbubble()">Bubble Sort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showselection()">Selection Sort</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showinsertion()">Insertion Sort</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showlinear()">Linear Search</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+
+    <div id="bubble">
+        <section class="head">Bubble Sort</section>
+        <section class="data-container1"></section>
+        <section id="ele1"></section>
+        <div style="margin: auto; width: fit-content;">
+        <button  class="btn1" onclick="generate1()" id="Buttonb" >
+        Generate New Array</button>
+        <button class="btn2" onclick="BubbleSort(),disable1()" id="Buttonb2" >
+        Bubble Sort</button>
+        </div>
+        <section class="feature">Sorting is Stable, Exchange, Inplace,
+        Internal<br>Best Case Time Complexity n <br>Worst Case Time
+        complexity n^2</section>
+    </div>
+
+    <div style="display: none;" id="selection">
+        <section class="head">Selection Sort</section>
+        <section class="data-container2"></section>
+        <section id="ele2"></section>
+        <div style="margin: auto; width: fit-content;">
+        <button  class="btn1" onclick="generate2()" id="Buttons" >
+        Generate New Array</button>
+        <button class="btn2" onclick="SelectionSort(),disable2()" id="Buttons2" >
+        Selection Sort</button>
+        </div>
+        <section class="feature">Sorting is Stable, Exchange, Inplace,
+        Internal<br>Best Case Time Complexity n <br>Worst Case Time
+        complexity n^2</section>
+    </div>
+
+    <div style="display: none;" id="insertion">
+        <section class="head">Insertion Sort</section>
+        <section class="data-container3"></section>
+        <section id="ele3"></section>
+        <div style="margin: auto; width: fit-content;">
+        <button  class="btn1" onclick="generate3()" id="Buttoni" >
+            Generate New Array</button>
+        <button class="btn2" onclick="InsertionSort(),disable3()" id="Buttoni2" >
+        Insertion Sort</button>
+        </div>
+        <section class="feature">Sorting is Stable, Exchange, Inplace,
+        Internal<br>Best Case Time Complexity n <br>Worst Case Time
+        complexity n^2</section>
+    </div>
+
+    <div style="display: none;" id="linear">
+        <section class="head">Linear Search</section>
+        <section class="data-container4"></section>
+        <section id="ele4"></section>
+        <div style="margin: auto; width: fit-content;">
+        <label for="fname">
+            Number to be Searched:
+        </label>
+        <input type="text" id="fname" name="fname" />
+        <br /><br />
+        <div id="text"></div>
+        </div>
+        <div style="margin: auto; width: fit-content;">
+        <button  class="btn1" onclick="generate4()" id="Buttonl" >
+        Generate New Array</button>
+        <button class="btn2" onclick="LinearSearch(),disable4()" id="Buttonl2" >
+        Linear Search</button>
+
+        </div>
+        <section class="feature">Best Case Time Complexity n <br>Worst Case Time
+        complexity n^2</section>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
