@@ -2,10 +2,12 @@ const container1 = document.querySelector(".data-container1");
 const container2 = document.querySelector(".data-container2");
 const container3 = document.querySelector(".data-container3");
 const container4 = document.querySelector(".data-container4");
+const container5 = document.querySelector(".data-container5");
 const bubble = document.getElementById("bubble");
 const selection = document.getElementById("selection");
 const insertion = document.getElementById("insertion");
 const linear = document.getElementById("linear");
+const binary = document.getElementById("binary");
 
 // Function to generate bars
 function generatebars1(num = 20) {
@@ -136,7 +138,31 @@ function generatebars4(num = 20) {
   }
 }
 
+function generatebars5() {
+  var arr = [];
+  for (var i = 0; i < 20; i++) {
+    var val = Number(Math.ceil(Math.random() * 100));
+    arr.push(val);
+  }
 
+  // Sorting Array in ascending order
+  arr.sort(function (a, b) {
+    return a - b;
+  });
+
+  for (var i = 0; i < 20; i++) {
+    var value = arr[i];
+    const bar = document.createElement("div");
+    bar.classList.add("bar5");
+    bar.style.height = `${value * 3}px`;
+    bar.style.transform = `translateX(${i * 30}px)`;
+    const barLabel = document.createElement("label");
+    barLabel.classList.add("bar__id5");
+    barLabel.innerHTML = value;
+    bar.appendChild(barLabel);
+    container5.appendChild(bar);
+  }
+}
 
 
 // Asynchronous function to perform "Insertion Sort"
@@ -359,12 +385,65 @@ async function LinearSearch(delay = 300) {
   document.getElementById("Buttonl2").style.backgroundColor = "rgb(24, 190, 255)";
 }
 
+async function BinarySearch(delay = 300) {
+  var bars = document.querySelectorAll(".bar5");
+  var output = document.getElementById("text2");
+  //Extracting the value of the element to be searched
+  var num = document.getElementById("fname2").value;
+  output.innerText = "";
+  // BinarySearch Algorithm
+  var start = 0;
+  var end = 19;
+  var flag = 0;
+  while (start <= end) {
+    //Midddle index
+    var mid = Math.floor((start + end) / 2);
+    bars[mid].style.backgroundColor = "#FF4949";
+
+    //Value at mid index
+    var value = Number(bars[mid].childNodes[0].innerHTML);
+
+    // To wait for .1 sec
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        resolve();
+      }, delay)
+    );
+
+    //Current element is equal to the element
+    //entered by the user
+    if (value == num) {
+      output.innerText = "Element Found";
+      bars[mid].style.backgroundColor = "#13CE66";
+      flag = 1;
+      break;
+    }
+    //Current element is greater than the element
+    //entered by the user
+    if (value > num) {
+      end = mid - 1;
+      bars[mid].style.backgroundColor = "#6b5b95";
+    } else {
+      start = mid + 1;
+      bars[mid].style.backgroundColor = "#6b5b95";
+    }
+  }
+  if (flag === 0) {
+    output.innerText = "Element Not Found";
+  }
+  document.getElementById("Buttonbi").disabled = false;
+  document.getElementById("Buttonbi").style.backgroundColor = "rgb(24, 190, 255)";
+  document.getElementById("Buttonbi2").disabled = false;
+  document.getElementById("Buttonbi2").style.backgroundColor = "rgb(24, 190, 255)";
+}
+
 
 // Call "generatebars()" function
 generatebars1();
 generatebars2();
 generatebars3();
 generatebars4();
+generatebars5();
 
 // Function to generate new random array
 function generate1()
@@ -386,6 +465,11 @@ function generate4()
 {
   document.querySelector(".data-container4").innerHTML="";
   generatebars4();
+}
+function generate5()
+{
+  document.querySelector(".data-container5").innerHTML="";
+  generatebars5();
 }
 
 // Function to disable the button
@@ -449,12 +533,28 @@ function disable4()
   .style.backgroundColor = "#d8b6ff";
 }
 
+function disable5()
+{
+  // To disable the button "Generate New Array"
+  document.getElementById("Buttonbi")
+  .disabled = true;
+  document.getElementById("Buttonbi")
+  .style.backgroundColor = "#d8b6ff";
+
+  // To disable the button "Linear Search"
+  document.getElementById("Buttonbi2")
+  .disabled = true;
+  document.getElementById("Buttonbi2")
+  .style.backgroundColor = "#d8b6ff";
+}
+
 function showbubble()
 {
   bubble.style.display="block";
   selection.style.display="none";
   insertion.style.display="none";
   linear.style.display="none";
+  binary.style.display="none";
 }
 
 function showselection()
@@ -463,6 +563,7 @@ function showselection()
   selection.style.display="block";
   insertion.style.display="none";
   linear.style.display="none";
+  binary.style.display="none";
 }
 
 function showinsertion()
@@ -471,6 +572,7 @@ function showinsertion()
   selection.style.display="none";
   insertion.style.display="block";
   linear.style.display="none";
+  binary.style.display="none";
 }
 
 function showlinear()
@@ -479,4 +581,14 @@ function showlinear()
   selection.style.display="none";
   insertion.style.display="none";
   linear.style.display="block";
+  binary.style.display="none";
+}
+
+function showbinary()
+{
+  bubble.style.display="none";
+  selection.style.display="none";
+  insertion.style.display="none";
+  linear.style.display="none";
+  binary.style.display="block";
 }

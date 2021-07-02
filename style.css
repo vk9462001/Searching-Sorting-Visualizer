@@ -18,14 +18,14 @@ body {
   font-weight: bolder;
 }
 
-.data-container1,.data-container2,.data-container3,.data-container4 {
+.data-container1,.data-container2,.data-container3,.data-container4,.data-container5 {
   width: 600px;
   height: 364px;
   position: relative;
   margin: 0 auto;
 }
 
-.bar1,.bar2,.bar3,.bar4 {
+.bar1,.bar2,.bar3,.bar4,.bar5 {
   width: 28px;
   position: absolute;
   left: 0;
@@ -34,7 +34,7 @@ body {
   transition: 0.2s all ease;
 }
 
-.bar__id1,.bar__id2,.bar__id3,.bar__id4 {
+.bar__id1,.bar__id2,.bar__id3,.bar__id4,.bar__id5 {
   position: absolute;
   top: -24px;
   width: 100%;
@@ -62,7 +62,7 @@ color: white;
 font-size: 16px;
 border: white
 }
-#ele1,#ele2,#ele3,#ele4{
+#ele1,#ele2,#ele3,#ele4,#ele5{
   text-align: center;
   height: 35px;
 }
